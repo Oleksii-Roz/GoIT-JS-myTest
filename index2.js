@@ -367,6 +367,35 @@
 // ЗАДАЧА /48------------------------------------------------------------------------
 
 // ЗАДАЧА 6/48------------------------------------------------------------------------
+
+const add = (a, b) => a + b;
+console.log(add(5, 10));
+
+const planets = ["Земля", "Марс", "Венера", "Юпитер"];
+
+const planetsInUpperCase = planets.map((planet) => planet.toUpperCase());
+console.log(planetsInUpperCase); // ['ЗЕМЛЯ', 'МАРС', 'ВЕНЕРА', 'ЮПИТЕР']
+console.log(planets); //['Земля', 'Марс', 'Венера', 'Юпитер']
+
+//=========================================
+const studentsMy = [
+  { name: "Манго", courses: ["математика", "физика"] },
+  { name: "Поли", courses: ["информатика", "математика"] },
+  { name: "Киви", courses: ["физика", "биология"] },
+];
+
+const allCourses = studentsMy.flatMap((student) => student.courses);
+// ['математика', 'физика', 'информатика', 'математика', 'физика', 'биология'];
+
+const uniqueCourses = allCourses.filter(
+  (course, index, array) => array.indexOf(course) === index
+); // ['математика', 'физика', 'информатика', 'биология']
+console.log(uniqueCourses);
+console.log(allCourses);
+
+//=========================================
+const LOW_SCORE = 50;
+const HIGH_SCORE = 80;
 const students = [
   { name: "Манго", score: 83 },
   { name: "Поли", score: 59 },
@@ -375,11 +404,57 @@ const students = [
   { name: "Хьюстон", score: 64 },
 ];
 
+const best = students.filter((student) => student.score >= HIGH_SCORE);
+console.table(best); // Массив объектов с именами Манго и Киви
+
+const worst = students.filter((student) => student.score < LOW_SCORE);
+console.table(worst); // Массив с одним объектом Аякс
+
+// В коллбек-функции удобно деструктуризировать свойства объекта
+const average = students.filter(
+  ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
+);
+console.table(average); // Массив объектов с именами Поли и Хьюстон
+
+//============================================
+const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+  return previousValue + number;
+}, 0);
+
+console.log("сума всех чисел равна:", total); // 32
+// # Вначале метод reduce() создаёт внутреннюю переменную-аккумулятор и
+// # присваивает ей значение параметра initialValue или первого элемента
+// # перебираемого массива, если initialValue не задан.
+// previousValue = 0
+
+// # Далее коллбек-функция вызывается для каждого элемента массива. Текущее значение
+// # параметра previousValue это то, что вернула коллбек-функция на прошлой итерации.
+// Итерация 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
+// Итерация 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
+// Итерация 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
+// Итерация 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
+// Итерация 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
+
+// # После того как весь массив перебран, метод reduce() возвращает значение аккумулятора.
+// Результат - 32
+
+//============================================
+
+const oldStudents = [
+  { name: "Манго", score: 83 },
+  { name: "Поли", score: 59 },
+  { name: "Аякс", score: 37 },
+  { name: "Киви", score: 94 },
+  { name: "Хьюстон", score: 64 },
+];
+
 // Название аккумулятора может быть произвольным, это просто параметр функции
-const totalScore = students.reduce((total, student) => {
+const totalScore = oldStudents.reduce((total, student) => {
   return total + student.score;
 }, 0);
-console.log(totalScore); // 337 score всех студентов
+console.log("oldStudents сумма значения score:", totalScore); // 337 score всех студентов
 
-const averageScore = totalScore / students.length;
-console.log(averageScore); // 67.4
+const averageScore = totalScore / oldStudents.length;
+console.log("oldStudents среднее значение score:", averageScore); // 67.4 среднее значение score
+
+//============================================

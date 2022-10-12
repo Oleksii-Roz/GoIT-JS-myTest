@@ -2951,78 +2951,165 @@
 // getCommonElements([1, 2, 3], [10, 20, 30]);
 
 // ЗАДАЧА 13/48------------------------------------------------------------------------
+// // function changeEven(numbers, value) {
+// //   // Change code below this line
+// //   for (let i = 0; i < numbers.length; i += 1) {
+// //     if (numbers[i] % 2 === 0) {
+// //       numbers[i] = numbers[i] + value;
+// //     }
+// //   }
+// //   // Change code above this line
+// // }
 
-//=========================================
-const add = (a, b) => a + b;
-console.log(add(5, 10));
+// function changeEven(numbers, value) {
+//   const newArray = [];
+//   numbers.forEach((number) => {
+//     if (number % 2 === 0) {
+//       newArray.push(number + value);
+//     } else {
+//       newArray.push(number);
+//     }
+//   });
+//   console.log(newArray);
+//   return newArray;
+// }
+// changeEven([1, 2, 3, 4, 5], 10);
+// changeEven([2, 8, 3, 7, 4, 6], 10);
+// changeEven([17, 24, 68, 31, 42], 100);
+// changeEven([44, 13, 81, 92, 36, 54], 100);
 
-const planets = ["Земля", "Марс", "Венера", "Юпитер"];
+// ЗАДАЧА 14/48------------------------------------------------------------------------
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+// const planetsLengths = planets.map((planet) => planet.length);
+// console.log(planetsLengths);
 
-const planetsInUpperCase = planets.map((planet) => planet.toUpperCase());
-console.log(planetsInUpperCase); // ['ЗЕМЛЯ', 'МАРС', 'ВЕНЕРА', 'ЮПИТЕР']
-console.log(planets); //['Земля', 'Марс', 'Венера', 'Юпитер']
+// ЗАДАЧА 15/48------------------------------------------------------------------------
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
 
-//=========================================
-const studentsMy = [
-  { name: "Манго", courses: ["математика", "физика"] },
-  { name: "Поли", courses: ["информатика", "математика"] },
-  { name: "Киви", courses: ["физика", "биология"] },
+// const titles = books.map((book) => book.title);
+// console.log(titles);
+
+// ЗАДАЧА 16/48------------------------------------------------------------------------
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism"],
+//   },
+// ];
+
+// const genres = books.flatMap((book) => book.genres);
+// console.log(genres);
+
+// ЗАДАЧА 17/48------------------------------------------------------------------------
+const users = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    skills: ["ipsum", "lorem"],
+    gender: "male",
+    age: 37,
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+    gender: "female",
+    age: 34,
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+    gender: "male",
+    age: 24,
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    skills: ["adipisicing", "irure", "velit"],
+    gender: "female",
+    age: 21,
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    skills: ["ex", "culpa", "nostrud"],
+    gender: "male",
+    age: 27,
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    skills: ["non", "amet", "ipsum"],
+    gender: "male",
+    age: 38,
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    skills: ["lorem", "veniam", "culpa"],
+    gender: "female",
+    age: 39,
+  },
 ];
 
-const allCourses = studentsMy.flatMap((student) => student.courses);
-// ['математика', 'физика', 'информатика', 'математика', 'физика', 'биология'];
-
-const uniqueCourses = allCourses.filter(
-  (course, index, array) => array.indexOf(course) === index
-); // ['математика', 'физика', 'информатика', 'биология']
-console.log(uniqueCourses);
-console.log(allCourses);
-
-//=========================================
-const LOW_SCORE = 50;
-const HIGH_SCORE = 80;
-const students = [
-  { name: "Манго", score: 83 },
-  { name: "Поли", score: 59 },
-  { name: "Аякс", score: 37 },
-  { name: "Киви", score: 94 },
-  { name: "Хьюстон", score: 64 },
-];
-
-const best = students.filter((student) => student.score >= HIGH_SCORE);
-console.table(best); // Массив объектов с именами Манго и Киви
-
-const worst = students.filter((student) => student.score < LOW_SCORE);
-console.table(worst); // Массив с одним объектом Аякс
-
-// В коллбек-функции удобно деструктуризировать свойства объекта
-const average = students.filter(
-  ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
-);
-console.table(average); // Массив объектов с именами Поли и Хьюстон
-
-//============================================
-const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
-  return previousValue + number;
-}, 0);
-
-console.log("сума всех чисел равна:", total); // 32
-// # Вначале метод reduce() создаёт внутреннюю переменную-аккумулятор и
-// # присваивает ей значение параметра initialValue или первого элемента
-// # перебираемого массива, если initialValue не задан.
-// previousValue = 0
-
-// # Далее коллбек-функция вызывается для каждого элемента массива. Текущее значение
-// # параметра previousValue это то, что вернула коллбек-функция на прошлой итерации.
-// Итерация 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
-// Итерация 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
-// Итерация 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
-// Итерация 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
-// Итерация 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
-
-// # После того как весь массив перебран, метод reduce() возвращает значение аккумулятора.
-// Результат - 32
-
-//============================================
-
-// test first
+// const getUserNames = users.map((user) => user.name);
+const getUserNames = users.map((user) => user.name);
+console.log(getUserNames);
