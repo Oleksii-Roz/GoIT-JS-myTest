@@ -3197,23 +3197,23 @@
 //   },
 // ];
 
-// const getUserEmails = (users) => {
-//   return users.map(({ email }) => email);
-// };
-// console.log(getUserEmails(users));
+// // const getUserEmails = users.map((user) => user.email);
+// // console.log("Все emails:", getUserEmails);
 
-// // const getUserNames = users.map((user) => user.email);
-// // console.log("Все emails:", getUserNames);
-
-// // const getUserNames = (users) => {
+// // const getUserEmails = (users) => {
 // //   return users.map((user) => user.email);
 // // };
-// // console.log("Все emails:", getUserNames(users));
+// // console.log("Все emails:", getUserEmails(users));
 
-// // const getUserNames = (users) => users.map((user) => user.email);
-// // console.log("Все emails:", getUserNames(users));
+// // const getUserEmails = (users) => {
+// //   return users.map(({ email }) => email);
+// // };
+// // console.log(getUserEmails(users));
 
-// // const getUserNames = (users) => users.map(({ email }) => email);
-// // console.log("Все emails:", getUserNames(users));
+// // const getUserEmails = (users) => users.map((user) => user.email);
+// // console.log("Все emails:", getUserEmails(users));
+
+// const getUserEmails = (users) => users.map(({ email }) => email);
+// console.log("Все emails:", getUserEmails(users));
 
 // ЗАДАЧА 19/48------------------------------------------------------------------------
