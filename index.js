@@ -2747,6 +2747,30 @@
 // console.log(pizzaPalace.order("Big Mike", makePizza, onOrderError));
 // console.log(pizzaPalace.order("Vienna", makePizza, onOrderError));
 
+// // const pizzaPalace = {
+// //   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+// //   order(pizzaName, onSuccess, onError) {
+// //     for (const pizza of this.pizzas){
+// //       if (pizza === pizzaName) {
+// //         return onSuccess (pizzaName);
+// //     }
+// //     }
+// //           return onError(`There is no pizza with a name ${pizzaName} in the assortment.`);
+// //   },
+// // };
+// // function makePizza(pizzaName) {
+// //   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// // }
+// // // Callback for onError
+// // function onOrderError(error) {
+// //   return `Error! ${error}`;
+// // }
+// // // Method calls with callbacks
+// // pizzaPalace.order('Smoked', makePizza, onOrderError);
+// // pizzaPalace.order('Four meats', makePizza, onOrderError);
+// // pizzaPalace.order('Big Mike', makePizza, onOrderError);
+// // pizzaPalace.order('Vienna', makePizza, onOrderError);
+
 // ЗАДАЧА 5/48------------------------------------------------------------------------
 // function calculateTotalPrice(orderedItems) {
 //   let totalPrice = 0;
@@ -3440,7 +3464,7 @@
 // ];
 
 // const getUsersWithAge = (users, minAge, maxAge) =>
-// 	// users.filter(user => user.age > minAge && age < maxAge); // без деструктуризации
+// users.filter(user => user.age > minAge && user.age < maxAge); // без деструктуризации
 // 	users.filter(({ age }) => age > minAge && age < maxAge); // сделал деструктуризацию
 
 // console.log(getUsersWithAge(users, 20, 30));
@@ -4187,3 +4211,115 @@
 // console.log("Сумму всех средств users:", calculateTotalBalance(users));
 
 // ЗАДАЧА 37/48------------------------------------------------------------------------
+// const users = [
+// 	{
+// 		name: "Moore Hensley",
+// 		email: "moorehensley@indexia.com",
+// 		eyeColor: "blue",
+// 		friends: ["Sharron Pace"],
+// 		isActive: false,
+// 		balance: 2811,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sharlene Bush",
+// 		email: "sharlenebush@tubesys.com",
+// 		eyeColor: "blue",
+// 		friends: ["Briana Decker", "Sharron Pace"],
+// 		isActive: true,
+// 		balance: 3821,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Ross Vazquez",
+// 		email: "rossvazquez@xinware.com",
+// 		eyeColor: "green",
+// 		friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+// 		isActive: false,
+// 		balance: 3793,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Elma Head",
+// 		email: "elmahead@omatom.com",
+// 		eyeColor: "green",
+// 		friends: ["Goldie Gentry", "Aisha Tran"],
+// 		isActive: true,
+// 		balance: 2278,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Carey Barr",
+// 		email: "careybarr@nurali.com",
+// 		eyeColor: "blue",
+// 		friends: ["Jordan Sampson", "Eddie Strong"],
+// 		isActive: true,
+// 		balance: 3951,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Blackburn Dotson",
+// 		email: "blackburndotson@furnigeer.com",
+// 		eyeColor: "brown",
+// 		friends: ["Jacklyn Lucas", "Linda Chapman"],
+// 		isActive: false,
+// 		balance: 1498,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sheree Anthony",
+// 		email: "shereeanthony@kog.com",
+// 		eyeColor: "brown",
+// 		friends: ["Goldie Gentry", "Briana Decker"],
+// 		isActive: true,
+// 		balance: 2764,
+// 		gender: "female",
+// 	},
+// ];
+
+// // const arrayFriends = users.flatMap(user => user.friends);
+// // console.log("Общее количество друзей:", arrayFriends.length);
+// // console.log("Имена общего количества друзей:", arrayFriends);
+
+// const getTotalFriendCount = users => {
+// 	return users.reduce((total, user) => {
+// 		return total + user.friends.length;
+// 	}, 0);
+// };
+// console.log("Общее количество друзей:", getTotalFriendCount(users));
+
+// //++++++++++++++++++++СОБРИТОРКА ДРУЗЕЙ ПО ИМЕНАМ+++++++++++++++++++++++++++++++++++
+// // const getNamesSortedByFriendsCount = users => {
+// // 	return users.sort((a, b) => a.friends.length - b.friends.length).map(e => e.name);
+// // };
+
+// // console.log(getNamesSortedByFriendsCount(users));
+// //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// //Цвета
+// //['blue','green','green','black','orange','blue','green','red']
+// // Если нам понадобятся только уникальные значения, то тогда нам надо будет проверить есть ли заданное значение в total, прежде чем отправлять его в этот массив.
+
+// // const uniqueColors = data.reduce((total, amount) => {
+// // 	amount.c.forEach(color => {
+// // 		if (total.indexOf(color) === -1) {
+// // 			total.push(color);
+// // 		}
+// // 	});
+// // 	return total;
+// // }, []);
+// // [ 'blue', 'red', 'green', 'black', 'orange']
+// //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// ЗАДАЧА 38/48------------------------------------------------------------------------
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = ["Tanith Lee", "Bernard Cornwell", "Robert Sheckley", "Fyodor Dostoevsky"];
+
+// const ascendingReleaseDates = [...releaseDates].sort();
+// console.log(ascendingReleaseDates);
+
+// const alphabeticalAuthors = [...authors].sort();
+// console.log(alphabeticalAuthors);
+
+// ЗАДАЧА 39/48------------------------------------------------------------------------
