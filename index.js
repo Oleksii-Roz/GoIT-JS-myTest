@@ -3893,3 +3893,225 @@
 // console.log(getUserWithEmail(users, "elmahead@omatom.com"));
 
 // ЗАДАЧА 30/48------------------------------------------------------------------------
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+
+// const eachElementInFirstIsEven = firstArray.every((array) => array % 2 === 0);
+// console.log(eachElementInFirstIsEven); // true
+
+// const eachElementInFirstIsOdd = firstArray.every((array) => array % 2 !== 0);
+// console.log(eachElementInFirstIsOdd); // false
+
+// const eachElementInSecondIsEven = secondArray.every((array) => array % 2 === 0);
+// console.log(eachElementInSecondIsEven); // true
+
+// const eachElementInSecondIsOdd = secondArray.every((array) => array % 2 !== 0);
+// console.log(eachElementInSecondIsOdd); // true
+
+// const eachElementInThirdIsEven = thirdArray.every((array) => array % 2 === 0);
+// console.log(eachElementInThirdIsEven); // false
+
+// const eachElementInThirdIsOdd = thirdArray.every((array) => array % 2 !== 0);
+// console.log(eachElementInThirdIsOdd); // false
+
+// ЗАДАЧА 31/48------------------------------------------------------------------------
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male",
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female",
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male",
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female",
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male",
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male",
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female",
+//   },
+// ];
+
+// const isEveryUserActive = (users) => {
+//   return users.every((user) => user.isActive);
+// };
+// console.log(isEveryUserActive(users));
+
+// ЗАДАЧА 32/48------------------------------------------------------------------------
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+
+// const anyElementInFirstIsEven = firstArray.some(
+//   (firstElm) => firstElm % 2 === 0
+// );
+// console.log(anyElementInFirstIsEven); // true
+// const anyElementInFirstIsOdd = firstArray.some(
+//   (firstElm) => firstElm % 2 !== 0
+// );
+// console.log(anyElementInFirstIsOdd); // false
+
+// const anyElementInSecondIsEven = secondArray.some(
+//   (secondElm) => secondElm % 2 === 0
+// );
+// console.log(anyElementInSecondIsEven); // false
+// const anyElementInSecondIsOdd = secondArray.some(
+//   (secondElm) => secondElm % 2 !== 0
+// );
+// console.log(anyElementInSecondIsOdd); // true
+
+// const anyElementInThirdIsEven = thirdArray.some(
+//   (thirdElm) => thirdElm % 2 === 0
+// );
+// console.log(anyElementInThirdIsEven); // true
+// const anyElementInThirdIsOdd = thirdArray.some(
+//   (thirdElm) => thirdElm % 2 !== 0
+// );
+// console.log(anyElementInThirdIsOdd); // true
+
+// ЗАДАЧА 33/48------------------------------------------------------------------------
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male",
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     gender: "female",
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male",
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female",
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male",
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male",
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female",
+//   },
+// ];
+
+// const isAnyUserActive = (users) => {
+//   return users.some((user) => user.isActive);
+// };
+// console.log(isAnyUserActive(users));
+
+// ЗАДАЧА 34/48------------------------------------------------------------------------
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244,
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// const totalPlayTime = playtimes.reduce((previousValue, number) => {
+//   return previousValue + number;
+// }, 0);
+// console.log("Общее игровое время:", totalPlayTime); // Сумма всех чисел массива [1270, 468, 710, 244]
+
+// const averagePlayTime = totalPlayTime / playtimes.length;
+// console.log("Cреднее время проведённое в играх:", averagePlayTime);
+
+// ЗАДАЧА 35/48------------------------------------------------------------------------
+const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+
+const totalAveragePlaytimePerGame = players;
