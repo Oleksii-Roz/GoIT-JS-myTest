@@ -373,23 +373,21 @@ console.log(add(5, 10));
 
 const planets = ["Земля", "Марс", "Венера", "Юпитер"];
 
-const planetsInUpperCase = planets.map((planet) => planet.toUpperCase());
+const planetsInUpperCase = planets.map(planet => planet.toUpperCase());
 console.log(planetsInUpperCase); // ['ЗЕМЛЯ', 'МАРС', 'ВЕНЕРА', 'ЮПИТЕР']
 console.log(planets); //['Земля', 'Марс', 'Венера', 'Юпитер']
 
 //=========================================
 const studentsMy = [
-  { name: "Манго", courses: ["математика", "физика"] },
-  { name: "Поли", courses: ["информатика", "математика"] },
-  { name: "Киви", courses: ["физика", "биология"] },
+	{ name: "Манго", courses: ["математика", "физика"] },
+	{ name: "Поли", courses: ["информатика", "математика"] },
+	{ name: "Киви", courses: ["физика", "биология"] },
 ];
 
-const allCourses = studentsMy.flatMap((student) => student.courses);
+const allCourses = studentsMy.flatMap(student => student.courses);
 // ['математика', 'физика', 'информатика', 'математика', 'физика', 'биология'];
 
-const uniqueCourses = allCourses.filter(
-  (course, index, array) => array.indexOf(course) === index
-); // ['математика', 'физика', 'информатика', 'биология']
+const uniqueCourses = allCourses.filter((course, index, array) => array.indexOf(course) === index); // ['математика', 'физика', 'информатика', 'биология']
 console.log(uniqueCourses);
 console.log(allCourses);
 
@@ -397,28 +395,26 @@ console.log(allCourses);
 const LOW_SCORE = 50;
 const HIGH_SCORE = 80;
 const students = [
-  { name: "Манго", score: 83 },
-  { name: "Поли", score: 59 },
-  { name: "Аякс", score: 37 },
-  { name: "Киви", score: 94 },
-  { name: "Хьюстон", score: 64 },
+	{ name: "Манго", score: 83 },
+	{ name: "Поли", score: 59 },
+	{ name: "Аякс", score: 37 },
+	{ name: "Киви", score: 94 },
+	{ name: "Хьюстон", score: 64 },
 ];
 
-const best = students.filter((student) => student.score >= HIGH_SCORE);
+const best = students.filter(student => student.score >= HIGH_SCORE);
 console.table(best); // Массив объектов с именами Манго и Киви
 
-const worst = students.filter((student) => student.score < LOW_SCORE);
+const worst = students.filter(student => student.score < LOW_SCORE);
 console.table(worst); // Массив с одним объектом Аякс
 
 // В коллбек-функции удобно деструктуризировать свойства объекта
-const average = students.filter(
-  ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
-);
+const average = students.filter(({ score }) => score >= LOW_SCORE && score < HIGH_SCORE);
 console.table(average); // Массив объектов с именами Поли и Хьюстон
 
 //============================================
 const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
-  return previousValue + number;
+	return previousValue + number;
 }, 0);
 
 console.log("сума всех чисел равна:", total); // 32
@@ -440,21 +436,40 @@ console.log("сума всех чисел равна:", total); // 32
 
 //============================================
 
-const oldStudents = [
-  { name: "Манго", score: 83 },
-  { name: "Поли", score: 59 },
-  { name: "Аякс", score: 37 },
-  { name: "Киви", score: 94 },
-  { name: "Хьюстон", score: 64 },
-];
+// const oldStudents = [
+// 	{ name: "Манго", score: 83 },
+// 	{ name: "Поли", score: 59 },
+// 	{ name: "Аякс", score: 37 },
+// 	{ name: "Киви", score: 94 },
+// 	{ name: "Хьюстон", score: 64 },
+// ];
 
-// Название аккумулятора может быть произвольным, это просто параметр функции
-const totalScore = oldStudents.reduce((total, student) => {
-  return total + student.score;
-}, 0);
-console.log("oldStudents сумма значения score:", totalScore); // 337 score всех студентов
+// // Название аккумулятора может быть произвольным, это просто параметр функции
+// const totalScore = oldStudents.reduce((total, student) => {
+// 	return total + student.score;
+// }, 0);
+// console.log("oldStudents сумма значения score:", totalScore); // 337 score всех студентов
 
-const averageScore = totalScore / oldStudents.length;
-console.log("oldStudents среднее значение score:", averageScore); // 67.4 среднее значение score
+// const averageScore = totalScore / oldStudents.length;
+// console.log("oldStudents среднее значение score:", averageScore); // 67.4 среднее значение score
 
+//============================================
+
+//============================================
+//массив
+// возвращает массив NamesSortedByFriendCount
+// const NamesSortedByFriendCount = users.flatMap(user => user.friends);
+// console.log(NamesSortedByFriendCount);  // возвращает массив NamesSortedByFriendCount
+
+//функция с деструктуризацией
+// возвращает функцию массива NamesSortedByFriendCount с деструктуризацией
+// const FriendCount = users => users.flatMap(user => user.friends);
+// console.log(FriendCount(users)); // возвращает функцию массива NamesSortedByFriendCount
+
+//функция без деструктуризации
+// возвращает функцию массива NamesSortedByFriendCount без деструктуризацией
+// const TestFriendCount = users => {
+// 	return users.flatMap(user => user.friends);
+// };
+// console.log(TestFriendCount(users));
 //============================================

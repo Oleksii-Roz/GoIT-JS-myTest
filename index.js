@@ -1636,6 +1636,16 @@
 // const averageRating = (totalRating / books.length).toFixed(1);
 // console.log(averageRating); // 8.2
 
+// JS V2 block-3======================================================================
+// ЗАДАЧА 1/41-------------------------------------------------------------------------
+// const apartment = {
+// 	imgUrl: "https://via.placeholder.com/640x480",
+// 	descr: "Spacious apartment in the city center",
+// 	rating: 4,
+// 	price: 2153,
+// 	tags: ["premium", "promoted", "top"],
+// };
+
 // ЗАДАЧА 2/41-------------------------------------------------------------------------
 // вариант 1
 // const apartment = {
@@ -3915,6 +3925,7 @@
 
 // 	// users.find((user) => user.email === email); // сравнение без дистукруризации
 // 	users.find(user => user.email === email); // сравнение с дистукруризации
+// 	users.find(user => user.email === email); // сравнение с дистукруризации
 
 // console.log(getUserWithEmail(users, "shereeanthony@kog.com"));
 // console.log(getUserWithEmail(users, "elmahead@omatom.com"));
@@ -4323,3 +4334,594 @@
 // console.log(alphabeticalAuthors);
 
 // ЗАДАЧА 39/48------------------------------------------------------------------------
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+
+// // const ascendingReleaseDates = [...releaseDates].sort((firstString, secondString) => firstString - secondString); // для примера
+// const ascendingReleaseDates = [...releaseDates].sort((a, b) => a - b);
+// console.log("Сортировка копии массива чисел по возростанию:", ascendingReleaseDates);
+
+// const descendingReleaseDates = [...releaseDates].sort((a, b) => b - a);
+// console.log("Сортировка копии массива чисел по убыванию:", descendingReleaseDates);
+
+// ЗАДАЧА 40/48------------------------------------------------------------------------
+
+// const authors = ["Tanith Lee", "Bernard Cornwell", "Robert Sheckley", "Fyodor Dostoevsky", "Howard Lovecraft"];
+
+// // const authorsInAlphabetOrder = [...authors].sort((firstString, secondString) =>
+// // 	firstString.localeCompare(secondString),
+// // ); // для примера
+// const authorsInAlphabetOrder = [...authors].sort((a, b) => a.localeCompare(b));
+// console.log("Сортировка копии массива строк в алфавитном порядке:", authorsInAlphabetOrder);
+
+// const authorsInReversedOrder = [...authors].sort((a, b) => b.localeCompare(a));
+// console.log("Сортировка копии массива строк в обратном алфавитном порядке:", authorsInReversedOrder);
+
+// ЗАДАЧА 41/48------------------------------------------------------------------------
+// const books = [
+// 	{
+// 		title: "The Last Kingdom",
+// 		author: "Bernard Cornwell",
+// 		rating: 8.38,
+// 	},
+// 	{
+// 		title: "Beside Still Waters",
+// 		author: "Robert Sheckley",
+// 		rating: 8.51,
+// 	},
+// 	{
+// 		title: "The Dream of a Ridiculous Man",
+// 		author: "Fyodor Dostoevsky",
+// 		rating: 7.75,
+// 	},
+// 	{ title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+// 	{ title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+
+// const sortedByAuthorName = [...books].sort((a, b) => a.author.localeCompare(b.author));
+// console.log(
+// 	"Сортировка копии массива строк, книг отсортированный по имени автора в алфавитном порядке:",
+// 	sortedByAuthorName,
+// );
+
+// const sortedByReversedAuthorName = [...books].sort((a, b) => b.author.localeCompare(a.author));
+// console.log(
+// 	"Сортировка копии массива строк, книг отсортированный по имени автора в обратном алфавитном порядке:",
+// 	sortedByReversedAuthorName,
+// );
+
+// const sortedByAscendingRating = [...books].sort((a, b) => a.rating - b.rating);
+// console.log("Сортировка копии массива чисел, книг отсортированный по возрастанию рейтинга:", sortedByAscendingRating);
+
+// const sortedByDescentingRating = [...books].sort((a, b) => b.rating - a.rating);
+// console.log("Сортировка копии массива чисел, книг отсортированный по убыванию рейтинга:", sortedByDescentingRating);
+
+// ЗАДАЧА 42/48------------------------------------------------------------------------
+// const users = [
+// 	{
+// 		name: "Moore Hensley",
+// 		email: "moorehensley@indexia.com",
+// 		eyeColor: "blue",
+// 		friends: ["Sharron Pace"],
+// 		isActive: false,
+// 		balance: 2811,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sharlene Bush",
+// 		email: "sharlenebush@tubesys.com",
+// 		eyeColor: "blue",
+// 		friends: ["Briana Decker", "Sharron Pace"],
+// 		isActive: true,
+// 		balance: 3821,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Ross Vazquez",
+// 		email: "rossvazquez@xinware.com",
+// 		eyeColor: "green",
+// 		friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+// 		isActive: false,
+// 		balance: 3793,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Elma Head",
+// 		email: "elmahead@omatom.com",
+// 		eyeColor: "green",
+// 		friends: ["Goldie Gentry", "Aisha Tran"],
+// 		isActive: true,
+// 		balance: 2278,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Carey Barr",
+// 		email: "careybarr@nurali.com",
+// 		eyeColor: "blue",
+// 		friends: ["Jordan Sampson", "Eddie Strong"],
+// 		isActive: true,
+// 		balance: 3951,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Blackburn Dotson",
+// 		email: "blackburndotson@furnigeer.com",
+// 		eyeColor: "brown",
+// 		friends: ["Jacklyn Lucas", "Linda Chapman"],
+// 		isActive: false,
+// 		balance: 1498,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sheree Anthony",
+// 		email: "shereeanthony@kog.com",
+// 		eyeColor: "brown",
+// 		friends: ["Goldie Gentry", "Briana Decker"],
+// 		isActive: true,
+// 		balance: 2764,
+// 		gender: "female",
+// 	},
+// ];
+
+// const sortByAscendingBalance = users => {
+// 	return [...users].sort((a, b) => a.balance - b.balance);
+// };
+// console.log(
+// 	"Сортировка копии массива объектов по числам из значения 'balance' , отсортированный по возрастанию баланса:",
+// 	sortByAscendingBalance(users),
+// );
+
+// ЗАДАЧА 43/48------------------------------------------------------------------------
+// const users = [
+// 	{
+// 		name: "Moore Hensley",
+// 		email: "moorehensley@indexia.com",
+// 		eyeColor: "blue",
+// 		friends: ["Sharron Pace"],
+// 		isActive: false,
+// 		balance: 2811,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sharlene Bush",
+// 		email: "sharlenebush@tubesys.com",
+// 		eyeColor: "blue",
+// 		friends: ["Briana Decker", "Sharron Pace"],
+// 		isActive: true,
+// 		balance: 3821,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Ross Vazquez",
+// 		email: "rossvazquez@xinware.com",
+// 		eyeColor: "green",
+// 		friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+// 		isActive: false,
+// 		balance: 3793,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Elma Head",
+// 		email: "elmahead@omatom.com",
+// 		eyeColor: "green",
+// 		friends: ["Goldie Gentry", "Aisha Tran"],
+// 		isActive: true,
+// 		balance: 2278,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Carey Barr",
+// 		email: "careybarr@nurali.com",
+// 		eyeColor: "blue",
+// 		friends: ["Jordan Sampson", "Eddie Strong"],
+// 		isActive: true,
+// 		balance: 3951,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Blackburn Dotson",
+// 		email: "blackburndotson@furnigeer.com",
+// 		eyeColor: "brown",
+// 		friends: ["Jacklyn Lucas", "Linda Chapman"],
+// 		isActive: false,
+// 		balance: 1498,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sheree Anthony",
+// 		email: "shereeanthony@kog.com",
+// 		eyeColor: "brown",
+// 		friends: ["Goldie Gentry", "Briana Decker"],
+// 		isActive: true,
+// 		balance: 2764,
+// 		gender: "female",
+// 	},
+// ];
+
+// const sortByDescendingFriendCount = users => {
+// 	return [...users].sort((a, b) => b.friends.length - a.friends.length);
+// };
+// console.log(
+// 	"Массив пользователей отсортированный по убыванию количества их друзей (свойство friends):",
+// 	sortByDescendingFriendCount(users),
+// );
+
+// // const names = [...users].sort((a, b) => a.friends.length - b.friends.length);
+// // // .map(users => users.name);
+// // console.log(
+// // 	names, // [...users].sort((a, b) => a.friends.length - b.friends.length); создаем новый массив и сортируем его по алфавиту всех друзей friends
+// // 	names.map(users => users.name), // .map(users => users.name) выводить массив всех друзей friends .
+// // );
+
+// ЗАДАЧА 44/48------------------------------------------------------------------------
+// const users = [
+// 	{
+// 		name: "Moore Hensley",
+// 		email: "moorehensley@indexia.com",
+// 		eyeColor: "blue",
+// 		friends: ["Sharron Pace"],
+// 		isActive: false,
+// 		balance: 2811,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sharlene Bush",
+// 		email: "sharlenebush@tubesys.com",
+// 		eyeColor: "blue",
+// 		friends: ["Briana Decker", "Sharron Pace"],
+// 		isActive: true,
+// 		balance: 3821,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Ross Vazquez",
+// 		email: "rossvazquez@xinware.com",
+// 		eyeColor: "green",
+// 		friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+// 		isActive: false,
+// 		balance: 3793,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Elma Head",
+// 		email: "elmahead@omatom.com",
+// 		eyeColor: "green",
+// 		friends: ["Goldie Gentry", "Aisha Tran"],
+// 		isActive: true,
+// 		balance: 2278,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Carey Barr",
+// 		email: "careybarr@nurali.com",
+// 		eyeColor: "blue",
+// 		friends: ["Jordan Sampson", "Eddie Strong"],
+// 		isActive: true,
+// 		balance: 3951,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Blackburn Dotson",
+// 		email: "blackburndotson@furnigeer.com",
+// 		eyeColor: "brown",
+// 		friends: ["Jacklyn Lucas", "Linda Chapman"],
+// 		isActive: false,
+// 		balance: 1498,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sheree Anthony",
+// 		email: "shereeanthony@kog.com",
+// 		eyeColor: "brown",
+// 		friends: ["Goldie Gentry", "Briana Decker"],
+// 		isActive: true,
+// 		balance: 2764,
+// 		gender: "female",
+// 	},
+// ];
+
+// const sortByName = users => [...users].sort((a, b) => a.name.localeCompare(b.name));
+// console.log(
+// 	"массив пользователей отсортированный по их имени (свойство name) в алфавитном порядке:",
+// 	sortByName(users),
+// );
+
+// ЗАДАЧА 45/48------------------------------------------------------------------------
+// const books = [
+// 	{
+// 		title: "The Last Kingdom",
+// 		author: "Bernard Cornwell",
+// 		rating: 8.38,
+// 	},
+// 	{
+// 		title: "Beside Still Waters",
+// 		author: "Robert Sheckley",
+// 		rating: 8.51,
+// 	},
+// 	{
+// 		title: "The Dream of a Ridiculous Man",
+// 		author: "Fyodor Dostoevsky",
+// 		rating: 7.75,
+// 	},
+// 	{ title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+// 	{
+// 		title: "The Dreams in the Witch House",
+// 		author: "Howard Lovecraft",
+// 		rating: 8.67,
+// 	},
+// ];
+// const MIN_BOOK_RATING = 8;
+
+// const names = books
+// 	.filter(book => book.rating >= MIN_BOOK_RATING)
+// 	.sort((a, b) => a.author.localeCompare(b.author))
+// 	.map(book => book.author);
+
+// console.log(names); // Значение переменной names это массив ['Bernard Cornwell', 'Howard Lovecraft', 'Robert Sheckley']
+
+// // const names = books =>
+// // 	[...books]
+// // 		.sort((a, b) => a.author.localeCompare(b.author))
+// // 		.filter(book => book.rating >= MIN_BOOK_RATING)
+// // 		.map(book => book.author);
+// // console.log(names(books)); // Значение переменной names это функция выводит новый массив ['Bernard Cornwell', 'Howard Lovecraft', 'Robert Sheckley']
+
+// // const names = books =>
+// // 	books
+// // 		.filter(book => book.rating >= MIN_BOOK_RATING)
+// // 		.map(book => book.author)
+// // 		.sort((a, b) => a.author - b.author);
+// // console.log(names(books)); // Значение переменной names это функция выводит массив ['Bernard Cornwell', 'Howard Lovecraft', 'Robert Sheckley']
+
+// ЗАДАЧА 46/48------------------------------------------------------------------------
+// const users = [
+// 	{
+// 		name: "Moore Hensley",
+// 		email: "moorehensley@indexia.com",
+// 		eyeColor: "blue",
+// 		friends: ["Sharron Pace"],
+// 		isActive: false,
+// 		balance: 2811,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sharlene Bush",
+// 		email: "sharlenebush@tubesys.com",
+// 		eyeColor: "blue",
+// 		friends: ["Briana Decker", "Sharron Pace"],
+// 		isActive: true,
+// 		balance: 3821,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Ross Vazquez",
+// 		email: "rossvazquez@xinware.com",
+// 		eyeColor: "green",
+// 		friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+// 		isActive: false,
+// 		balance: 3793,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Elma Head",
+// 		email: "elmahead@omatom.com",
+// 		eyeColor: "green",
+// 		friends: ["Goldie Gentry", "Aisha Tran"],
+// 		isActive: true,
+// 		balance: 2278,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Carey Barr",
+// 		email: "careybarr@nurali.com",
+// 		eyeColor: "blue",
+// 		friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+// 		isActive: true,
+// 		balance: 3951,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Blackburn Dotson",
+// 		email: "blackburndotson@furnigeer.com",
+// 		eyeColor: "brown",
+// 		friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+// 		isActive: false,
+// 		balance: 1498,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sheree Anthony",
+// 		email: "shereeanthony@kog.com",
+// 		eyeColor: "brown",
+// 		friends: ["Goldie Gentry", "Briana Decker"],
+// 		isActive: true,
+// 		balance: 2764,
+// 		gender: "female",
+// 	},
+// ];
+
+// // const getNamesSortedByFriendCount = users => {
+// // 	return [...users].sort((a, b) => a.friends.length - b.friends.length).map(users => users.name);
+// // };
+// // console.log(getNamesSortedByFriendCount(users));
+
+// const getNamesSortedByFriendCount = users =>
+// 	[...users].sort((a, b) => a.friends.length - b.friends.length).map(users => users.name);
+
+// console.log(getNamesSortedByFriendCount(users));
+
+// //============================================
+// //массив
+// // возвращает массив NamesSortedByFriendCount
+// // const NamesSortedByFriendCount = users.flatMap(user => user.friends);
+// // console.log(NamesSortedByFriendCount);  // возвращает массив NamesSortedByFriendCount
+
+// //функция с деструктуризацией
+// // возвращает функцию массива NamesSortedByFriendCount с деструктуризацией
+// // const FriendCount = users => users.flatMap(user => user.friends);
+// // console.log(FriendCount(users)); // возвращает функцию массива NamesSortedByFriendCount
+
+// //функция без деструктуризации
+// // возвращает функцию массива NamesSortedByFriendCount без деструктуризацией
+// // const TestFriendCount = users => {
+// // 	return users.flatMap(user => user.friends);
+// // };
+// // console.log(TestFriendCount(users));
+// //============================================
+
+// ЗАДАЧА 47/48------------------------------------------------------------------------
+// const users = [
+// 	{
+// 		name: "Moore Hensley",
+// 		email: "moorehensley@indexia.com",
+// 		eyeColor: "blue",
+// 		friends: ["Sharron Pace"],
+// 		isActive: false,
+// 		balance: 2811,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sharlene Bush",
+// 		email: "sharlenebush@tubesys.com",
+// 		eyeColor: "blue",
+// 		friends: ["Briana Decker", "Sharron Pace"],
+// 		isActive: true,
+// 		balance: 3821,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Ross Vazquez",
+// 		email: "rossvazquez@xinware.com",
+// 		eyeColor: "green",
+// 		friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+// 		isActive: false,
+// 		balance: 3793,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Elma Head",
+// 		email: "elmahead@omatom.com",
+// 		eyeColor: "green",
+// 		friends: ["Goldie Gentry", "Aisha Tran"],
+// 		isActive: true,
+// 		balance: 2278,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Carey Barr",
+// 		email: "careybarr@nurali.com",
+// 		eyeColor: "blue",
+// 		friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+// 		isActive: true,
+// 		balance: 3951,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Blackburn Dotson",
+// 		email: "blackburndotson@furnigeer.com",
+// 		eyeColor: "brown",
+// 		friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+// 		isActive: false,
+// 		balance: 1498,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sheree Anthony",
+// 		email: "shereeanthony@kog.com",
+// 		eyeColor: "brown",
+// 		friends: ["Goldie Gentry", "Briana Decker"],
+// 		isActive: true,
+// 		balance: 2764,
+// 		gender: "female",
+// 	},
+// ];
+// //Дополни функцию getSortedFriends(users) так, чтобы она возвращала массив уникальных имён друзей (свойство friends) отсортированный по алфавиту .
+// const getSortedFriends = users => {
+// 	return users
+// 		.flatMap(user => user.friends) // На исходном массиве вызываем flatMap() и делаем разглаженный массив всех друзей friends
+// 		.filter((friends, index, array) => array.indexOf(friends) === index) // К результату метода flatMap() применяем метод filter() для фильтрации уникальных элементов friends.
+// 		.sort((a, b) => a.localeCompare(b)); // На результате метода filter() вызываем sort() сортировка по алфавиту
+// };
+// console.log(getSortedFriends(users));
+
+// ЗАДАЧА 48/48------------------------------------------------------------------------
+// const users = [
+// 	{
+// 		name: "Moore Hensley",
+// 		email: "moorehensley@indexia.com",
+// 		eyeColor: "blue",
+// 		friends: ["Sharron Pace"],
+// 		isActive: false,
+// 		balance: 2811,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sharlene Bush",
+// 		email: "sharlenebush@tubesys.com",
+// 		eyeColor: "blue",
+// 		friends: ["Briana Decker", "Sharron Pace"],
+// 		isActive: true,
+// 		balance: 3821,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Ross Vazquez",
+// 		email: "rossvazquez@xinware.com",
+// 		eyeColor: "green",
+// 		friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+// 		isActive: false,
+// 		balance: 3793,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Elma Head",
+// 		email: "elmahead@omatom.com",
+// 		eyeColor: "green",
+// 		friends: ["Goldie Gentry", "Aisha Tran"],
+// 		isActive: true,
+// 		balance: 2278,
+// 		gender: "female",
+// 	},
+// 	{
+// 		name: "Carey Barr",
+// 		email: "careybarr@nurali.com",
+// 		eyeColor: "blue",
+// 		friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+// 		isActive: true,
+// 		balance: 3951,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Blackburn Dotson",
+// 		email: "blackburndotson@furnigeer.com",
+// 		eyeColor: "brown",
+// 		friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+// 		isActive: false,
+// 		balance: 1498,
+// 		gender: "male",
+// 	},
+// 	{
+// 		name: "Sheree Anthony",
+// 		email: "shereeanthony@kog.com",
+// 		eyeColor: "brown",
+// 		friends: ["Goldie Gentry", "Briana Decker"],
+// 		isActive: true,
+// 		balance: 2764,
+// 		gender: "female",
+// 	},
+// ];
+
+// //Дополни функцию getTotalBalanceByGender(users, gender) так, чтобы она возвращала общий баланс пользователей (свойство balance), пол которых (свойство gender) совпадает со значением параметра gender.
+// // const getTotalBalanceByGender = (users, gender) => { };
+
+// const getTotalBalanceByGender = (users, gender) => {
+// 	return users
+// 		.filter(user => user.gender === gender)
+// 		.reduce((total, user) => {
+// 			return total + user.balance;
+// 		}, 0);
+// };
+// console.log(getTotalBalanceByGender(users, "female")); // если gender === "female" верни их общий баланс balance
+// console.log(getTotalBalanceByGender(users, "male")); // если gender === "male" верни их общий баланс balance
+
+// JS V2 block-5 =====================================================================
+// ЗАДАЧА 1/20------------------------------------------------------------------------
