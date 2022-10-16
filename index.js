@@ -4020,9 +4020,17 @@
 // 	},
 // ];
 
-// const isEveryUserActive = users => {
-// 	return users.every(user => user.isActive);
-// };
+// // const isEveryUserActive = users => {
+// // 	return users.every(user => user.isActive);
+// // }; //стрелочная функция
+// // console.log(isEveryUserActive(users));
+
+// // const isEveryUserActive = users => {
+// // 	return users.every(({ isActive }) => isActive);
+// // }; //стрелочная функция с диструктуризацией
+// // console.log(isEveryUserActive(users));
+
+// const isEveryUserActive = users => users.every(({ isActive }) => isActive); //стрелочная функция с глубокой диструктуризацией
 // console.log(isEveryUserActive(users));
 
 // ЗАДАЧА 32/48------------------------------------------------------------------------
