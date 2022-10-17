@@ -473,3 +473,57 @@ console.log("сума всех чисел равна:", total); // 32
 // };
 // console.log(TestFriendCount(users));
 //============================================
+
+//====================================================================================
+//====================================================================================
+// function foo() {
+// 	console.log(this);
+// }
+
+// foo(); // window без "use strict" и undefined с "use strict"
+//====================================================================================
+//====================================================================================
+
+//====================================================================================
+//====================================================================================
+// "use strict";
+
+// const counter = {
+// 	value: 0,
+// 	increment(value) {
+// 		console.log("increment ->", this);
+// 		this.value += value;
+// 	},
+// 	decrement(value) {
+// 		console.log("decrement ->", this);
+// 		this.value -= value;
+// 	},
+// };
+// const updateCounter = function (value, operation) {
+// 	operation(value);
+// };
+
+// updateCounter(10, counter.increment);
+// updateCounter(5, counter.decrement);
+
+// fix undefined ниже исправления:
+
+// const counter = {
+// 	value: 0,
+// 	increment(value) {
+// 		console.log("increment ->", this);
+// 		this.value += value;
+// 	},
+// 	decrement(value) {
+// 		console.log("decrement ->", this);
+// 		this.value -= value;
+// 	},
+// };
+// const updateCounter = function (value, operation) {
+// 	operation(value);
+// };
+
+// updateCounter(10, counter.increment.bind(counter));
+// updateCounter(5, counter.decrement.bind(counter));
+//====================================================================================
+//====================================================================================

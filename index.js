@@ -1,3 +1,5 @@
+// "use strict";
+
 //
 //
 //
@@ -4933,8 +4935,180 @@
 
 // JS V2 block-5 =====================================================================
 // ЗАДАЧА 1/20------------------------------------------------------------------------
-function foo() {
-	console.log(this);
-}
+// Выполни рефакторинг методов объекта pizzaPalace, расставив отсутствующие this в местах обращения к свойствам и методам объекта.
+// // const pizzaPalace = {
+// // 	pizzas: ["Supercheese", "Smoked", "Four meats"],
+// // 	// Change code below this line
+// // 	checkPizza(pizzaName) {
+// // 		return pizzas.includes(pizzaName);
+// // 	},
+// // 	order(pizzaName) {
+// // 		const isPizzaAvailable = checkPizza(pizzaName);
 
-foo(); // window без "use strict" и undefined с "use strict"
+// // 		if (!isPizzaAvailable) {
+// // 			return `Sorry, there is no pizza named «${pizzaName}»`;
+// // 		}
+
+// // 		return `Order accepted, preparing «${pizzaName}» pizza`;
+// // 	},
+// // 	// Change code above this line
+// // };
+
+// const pizzaPalace = {
+// 	pizzas: ["Supercheese", "Smoked", "Four meats"],
+// 	checkPizza(pizzaName) {
+// 		return this.pizzas.includes(pizzaName);
+// 	},
+// 	order(pizzaName) {
+// 		const isPizzaAvailable = this.checkPizza(pizzaName);
+
+// 		if (!isPizzaAvailable) {
+// 			return `Sorry, there is no pizza named «${pizzaName}»`;
+// 		}
+
+// 		return `Order accepted, preparing «${pizzaName}» pizza`;
+// 	},
+// };
+
+// console.log(pizzaPalace.order("Smoked"));
+// console.log(pizzaPalace.order("Four meats"));
+// console.log(pizzaPalace.order("Big Mike"));
+// console.log(pizzaPalace.order("Viennese"));
+
+// ЗАДАЧА 2/20------------------------------------------------------------------------
+// // const customer = {
+// //   username: "Mango",
+// //   balance: 24000,
+// //   discount: 0.1,
+// //   orders: ["Burger", "Pizza", "Salad"],
+// //   // Change code below this line
+// //   getBalance() {
+// //     return balance;
+// //   },
+// //   getDiscount() {
+// //     return discount;
+// //   },
+// //   setDiscount(value) {
+// //     discount = value;
+// //   },
+// //   getOrders() {
+// //     return orders;
+// //   },
+// //   addOrder(cost, order) {
+// //     balance -= cost - cost * discount;
+// //     orders.push(order);
+// //   },
+// //   // Change code above this line
+// // };
+
+// // customer.setDiscount(0.15);
+// // console.log(customer.getDiscount()); // 0.15
+// // customer.addOrder(5000, "Steak");
+// // console.log(customer.getBalance()); // 19750
+// // console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+
+// const customer = {
+// 	username: "Mango",
+// 	balance: 24000,
+// 	discount: 0.1,
+// 	orders: ["Burger", "Pizza", "Salad"],
+// 	getBalance() {
+// 		return this.balance;
+// 	},
+// 	getDiscount() {
+// 		return this.discount;
+// 	},
+// 	setDiscount(value) {
+// 		this.discount = value;
+// 	},
+// 	getOrders() {
+// 		return this.orders;
+// 	},
+// 	addOrder(cost, order) {
+// 		this.balance -= cost - cost * this.discount;
+// 		this.orders.push(order);
+// 	},
+// };
+
+// customer.setDiscount(0.15);
+// console.log(customer.getDiscount()); // 0.15
+// customer.addOrder(5000, "Steak");
+// console.log(customer.getBalance()); // 19750
+// console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+
+// ЗАДАЧА 3/20------------------------------------------------------------------------
+// // const historyService = {
+// //   orders: [
+// //     { email: "jacob@hotmail.com", dish: "Burrito" },
+// //     { email: "solomon@topmail.net", dish: "Burger" },
+// //     { email: "artemis@coldmail.net", dish: "Pizza" },
+// //     { email: "solomon@topmail.net", dish: "Apple pie" },
+// //     { email: "jacob@hotmail.com", dish: "Taco" },
+// //   ],
+// //   // Change code below this line
+// //   getOrdersLog() {
+// //     return orders
+// //       .map(order => `email: ${order.email} dish: ${order.dish}`)
+// //       .join(" - ");
+// //   },
+// //   getEmails() {
+// //     const emails = orders.map(order => order.email);
+// //     const uniqueEmails = new Set(emails);
+// //     return [...uniqueEmails];
+// //   },
+// //   getOrdersByEmail(email) {
+// //     return orders.filter(order => order.email === email);
+// //   },
+// //   // Change code above this line
+// // };
+
+// const historyService = {
+// 	orders: [
+// 		{ email: "jacob@hotmail.com", dish: "Burrito" },
+// 		{ email: "solomon@topmail.net", dish: "Burger" },
+// 		{ email: "artemis@coldmail.net", dish: "Pizza" },
+// 		{ email: "solomon@topmail.net", dish: "Apple pie" },
+// 		{ email: "jacob@hotmail.com", dish: "Taco" },
+// 	],
+// 	// Change code below this line
+// 	getOrdersLog() {
+// 		return this.orders.map(order => `email: ${order.email} dish: ${order.dish}`).join(" - ");
+// 	},
+// 	getEmails() {
+// 		const emails = this.orders.map(order => order.email);
+// 		const uniqueEmails = new Set(emails);
+// 		return [...uniqueEmails];
+// 	},
+// 	getOrdersByEmail(email) {
+// 		return this.orders.filter(order => order.email === email);
+// 	},
+// 	// Change code above this line
+// };
+
+// console.log(historyService.getOrdersLog());
+// console.log(historyService.getEmails());
+// console.log(historyService.getOrdersByEmail("solomon@topmail.net"));
+// console.log(historyService.getOrdersByEmail("artemis@coldmail.net"));
+
+// ЗАДАЧА 4/20------------------------------------------------------------------------
+const parent = {
+	name: "Stacey",
+	surname: "Moore",
+	age: 54,
+	heritage: "Irish",
+};
+// Change code below this line
+
+const child = {};
+
+// Change code above this line
+child.name = "Jason";
+child.age = 27;
+
+parent.hasOwnProperty("surname");
+parent.hasOwnProperty("heritage");
+parent.hasOwnProperty("heritage");
+child.hasOwnProperty("age");
+child.hasOwnProperty("surname");
+child.hasOwnProperty("heritage");
+parent.isPrototypeOf(child);
