@@ -5348,3 +5348,75 @@
 // console.log(nissan);
 
 // ЗАДАЧА 13/20------------------------------------------------------------------------
+// // Выполни рефакторинг класса Storage, сделав свойство items приватным.
+
+// // Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+// class Storage {
+// 	// Change code below this line
+// 	#items;
+// 	constructor(items) {
+// 		this.#items = items;
+// 	}
+
+// 	getItems() {
+// 		return this.#items;
+// 	}
+
+// 	addItem(newItem) {
+// 		this.#items.push(newItem);
+// 	}
+
+// 	removeItem(itemToRemove) {
+// 		this.#items = this.#items.filter(item => item !== itemToRemove);
+// 	}
+// }
+
+// // Change code above this line
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
+
+// ЗАДАЧА 14/20------------------------------------------------------------------------
+// // Выполни рефакторинг класса StringBuilder, сделав свойство value приватным.
+
+// // Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+// class StringBuilder {
+// 	// Change code below this line
+// 	#value;
+// 	constructor(initialValue) {
+// 		this.#value = initialValue;
+// 	}
+
+// 	getValue() {
+// 		return this.#value;
+// 	}
+
+// 	padEnd(str) {
+// 		this.#value += str;
+// 	}
+
+// 	padStart(str) {
+// 		this.#value = str + this.#value;
+// 	}
+
+// 	padBoth(str) {
+// 		this.padStart(str);
+// 		this.padEnd(str);
+// 	}
+// }
+
+// // Change code above this line
+// const builder = new StringBuilder(".");
+// console.log(builder.getValue()); // "."
+// builder.padStart("^");
+// console.log(builder.getValue()); // "^."
+// builder.padEnd("^");
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth("=");
+// console.log(builder.getValue()); // "=^.^="
+
+// ЗАДАЧА 15/20------------------------------------------------------------------------
+// Выполни рефакторинг класса Car. Сделай свойства model и price приватными, также как #brand. Стандартизируй публичный интерфейс класса заменив уже объявленные методы на геттеры и сеттеры brand, model и price для взаимодействия с приватными свойствами.
