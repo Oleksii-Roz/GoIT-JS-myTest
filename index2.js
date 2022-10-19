@@ -527,3 +527,80 @@ console.log("сума всех чисел равна:", total); // 32
 // updateCounter(5, counter.decrement.bind(counter));
 //====================================================================================
 //====================================================================================
+
+//====================================================================================
+////===Пример наследование прототипов prototype =======================================================
+class Hero {
+	constructor({ name = "hero", xp = 0 } = {}) {
+		this.name = name;
+		this.xp = xp;
+	}
+
+	gainXp(amount) {
+		console.log(`${this.name} получает ${amount} опыта`);
+		this.xp += amount;
+	}
+}
+
+class Warrior extends Hero {
+	constructor({ weapon, ...restProps } = {}) {
+		super(restProps);
+		this.weapon = weapon;
+	}
+
+	attack() {
+		console.log(`${this.name} атакует используя ${this.weapon}`);
+	}
+}
+
+class Berserk extends Warrior {
+	constructor({ warcry, ...restProps } = {}) {
+		super(restProps);
+		this.warcry = warcry;
+	}
+	babyRage() {
+		console.log(`${this.name} использует ${this.warcry}`);
+	}
+}
+
+class Mage extends Hero {
+	constructor({ spells, ...restProps } = {}) {
+		super(restProps);
+		this.spells = spells;
+	}
+	cast() {
+		console.log();
+		console.log(`${this.name} что-то там кастует :))))`);
+	}
+}
+
+const mango = new Warrior({ name: "mango", xp: 1000, weapon: "алебарда" });
+console.log(mango); // Warrior {name: 'mango', xp: 1000, weapon: 'алебарда'}
+
+const poly = new Mage({ name: "poly", xp: 500, spells: ["фаербол"] });
+
+const ajax = new Berserk({ name: "ajax", xp: 500, weapon: "топор", warcry: "waywaywaywawaaaaaaaaaah" });
+
+console.log("mango.__proto__ === Warrior.prototype", mango.__proto__ === Warrior.prototype); //true (строка 5140 тот же самый запрос как в 5139)
+console.log("Object.getPrototypeOf(mango) === Warrior.prototype", Object.getPrototypeOf(mango) === Warrior.prototype); //true (строка 5139 тот же самый запрос как в 5140, только этот более правельней)
+
+console.log("Warrior.prototype", Warrior.prototype); // Warrior.prototype Hero {constructor: ƒ}
+console.log("Warrior.prototype.__proto__ === Hero.prototype", Warrior.prototype.__proto__ === Hero.prototype); //true
+
+console.log("Hero.prototype", Hero.prototype); //Hero.prototype {constructor: ƒ, gainXp: ƒ}
+console.log("Hero.prototype.__proto__", Hero.prototype.__proto__ === Object.prototype); //true
+
+mango.attack();
+mango.gainXp(1000); //mango получает 1000 опыта
+
+console.log(poly); //Mage {name: 'poly', xp: 500, spells: Array(1)}
+poly.cast(); //poly что-то там кастует :))))
+poly.gainXp(200); //poly получает 200 опыта
+
+console.log(ajax); //Berserk {name: 'ajax', xp: 500, weapon: 'exe', warcry: 'waywaywaywawaaaaaaaaaah'}
+ajax.babyRage(); //ajax использует waywaywaywawaaaaaaaaaah
+ajax.gainXp(100); //ajax получает 600 опыта
+ajax.attack(); //ajax атакует используя
+ajax.gainXp(400); //ajax получает 600 опыта
+////===Пример наследование прототипов prototype =======================================================
+//====================================================================================

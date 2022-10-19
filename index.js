@@ -5091,24 +5091,260 @@
 // console.log(historyService.getOrdersByEmail("artemis@coldmail.net"));
 
 // ЗАДАЧА 4/20------------------------------------------------------------------------
-const parent = {
-	name: "Stacey",
-	surname: "Moore",
-	age: 54,
-	heritage: "Irish",
-};
-// Change code below this line
+// const parent = {
+// 	name: "Stacey",
+// 	surname: "Moore",
+// 	age: 54,
+// 	heritage: "Irish",
+// };
+// // Change code below this line
 
-const child = {};
+// // const child = {};
+// const child = Object.create(parent);
 
-// Change code above this line
-child.name = "Jason";
-child.age = 27;
+// // Change code above this line
+// child.name = "Jason";
+// child.age = 27;
 
-parent.hasOwnProperty("surname");
-parent.hasOwnProperty("heritage");
-parent.hasOwnProperty("heritage");
-child.hasOwnProperty("age");
-child.hasOwnProperty("surname");
-child.hasOwnProperty("heritage");
-parent.isPrototypeOf(child);
+// console.log(parent.hasOwnProperty("surname"));
+// console.log(parent.hasOwnProperty("heritage"));
+
+// console.log(child.hasOwnProperty("name"));
+// console.log(child.name);
+// console.log(child.hasOwnProperty("age"));
+// console.log(child.age);
+// console.log(child.hasOwnProperty("surname"));
+// console.log(child.surname);
+
+// console.log(parent.isPrototypeOf(child));
+// console.log(child.isPrototypeOf(parent));
+
+// ЗАДАЧА 5/20------------------------------------------------------------------------
+// const ancestor = {
+// 	name: "Paul",
+// 	age: 83,
+// 	surname: "Dawson",
+// 	heritage: "Irish",
+// };
+
+// // const parent = {};
+// const parent = Object.create(ancestor);
+// parent.name = "Stacey";
+// parent.surname = "Moore";
+// parent.age = 54;
+
+// // const child = {};
+// const child = Object.create(parent);
+// child.name = "Jason";
+// child.age = 27;
+
+// console.log(ancestor.isPrototypeOf("parent"));
+// console.log(parent.isPrototypeOf("child"));
+// console.log(ancestor.hasOwnProperty("surname"));
+// console.log(ancestor.surname);
+// console.log(parent.hasOwnProperty("surname"));
+// console.log(parent.surname);
+// console.log(child.hasOwnProperty("surname"));
+// console.log(child.surname);
+// console.log(ancestor.hasOwnProperty("heritage"));
+// console.log(ancestor.heritage);
+// console.log(parent.hasOwnProperty("heritage"));
+// console.log(parent.heritage);
+// console.log(child.hasOwnProperty("heritage"));
+// console.log(child.heritage);
+
+// ЗАДАЧА 6/20------------------------------------------------------------------------
+// Используя ключевое слово class объяви класс Car с пустым телом.
+// class Car {}
+
+// ЗАДАЧА 7/20------------------------------------------------------------------------
+// class Car {
+// 	constructor(brand, model, price) {
+// 		this.brand = brand;
+// 		this.model = model;
+// 		this.price = price;
+// 	}
+// }
+
+// const audi = new Car("Audi", "Q3", 36000);
+// const bmw = new Car("BMW", "X5", 58900);
+// const nissan = new Car("Nissan", "Murano", 31700);
+
+// console.log(audi);
+// console.log(bmw);
+// console.log(nissan);
+
+// ЗАДАЧА 8/20------------------------------------------------------------------------
+// // Выполни рефакторинг класса Car так, чтобы он принимал один параметр - объект со свойсвами brand, model и price. Деструктуризируй объект в сигнатуре (подписи) конструктора.
+// // class Car {
+// // 	constructor(brand, model, price) {
+// // 		this.brand = brand;
+// // 		this.model = model;
+// // 		this.price = price;
+// // 	}
+// // }
+
+// class Car {
+// 	constructor({ brand, model, price }) {
+// 		this.brand = brand;
+// 		this.model = model;
+// 		this.price = price;
+// 	}
+// }
+// const audi = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+// const bmw = new Car({ brand: "BMW", model: "X5", price: 58900 });
+// const nissan = new Car({ brand: "Nissan", model: "Murano", price: 31700 });
+
+// console.log(audi);
+// console.log(bmw);
+// console.log(nissan);
+
+// ЗАДАЧА 9/20------------------------------------------------------------------------
+// // Добавь классу Car два метода.
+
+// // getPrice() - возвращает значение свойства price из объекта который его будет вызывать.
+// // changePrice(newPrice) - обновляет значение свойства price у объекта который его будет вызывать на newPrice.
+// // class Car {
+// // 	constructor({ brand, model, price }) {
+// // 		this.brand = brand;
+// // 		this.model = model;
+// // 		this.price = price;
+// // 	}
+// // 	// Change code below this line
+
+// // 	// Change code above this line
+// // }
+// class Car {
+// 	constructor({ brand, model, price }) {
+// 		this.brand = brand;
+// 		this.model = model;
+// 		this.price = price;
+// 	}
+
+// 	getPrice() {
+// 		return this.price;
+// 	}
+
+// 	changePrice(newPrice) {
+// 		this.price = newPrice;
+// 	}
+// }
+
+// const audi = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+// console.log(Car.prototype.hasOwnProperty("getPrice"));
+// console.log(Car.prototype.hasOwnProperty("changePrice"));
+// audi.changePrice(3500);
+// console.log(audi.getPrice());
+// console.log(audi);
+
+// ЗАДАЧА 10/20------------------------------------------------------------------------
+// // Напиши класс Storage, который будет создавать объекты для управления складом товаров. Класс ожидает только один аргумент - начальный массив товаров, который записывается на создаваемый объект в свойство items.
+
+// // Объяви следующие методы класса:
+
+// // getItems() - возвращает массив текущих товаров в свойстве items объекта который вызывает этот метод.
+// // addItem(newItem) - принимает новый товар newItem и добавляет его в массив товаров в свойстве items объекта который вызывает этот метод.
+// // removeItem(itemToRemove) - принимает товар itemToRemove и удаляет его из массива товаров в свойстве items объекта который вызывает этот метод.
+// // Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+// class Storage {
+// 	constructor(items = []) {
+// 		this.items = items;
+// 	}
+
+// 	getItems() {
+// 		return this.items;
+// 	}
+// addItem(item) {
+// 	this.items.push(item);
+// }
+
+// 	removeItem(itemRemove) {
+// 		return (this.items = this.items.filter(item => item !== itemRemove));
+// 	}
+// }
+// // Change code above this line
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]()
+
+// ЗАДАЧА 11/20------------------------------------------------------------------------
+// Напиши класс StringBuilder, который принимает один параметр initialValue - произвольную строку, которая записывается на создаваемый объект в свойство value.
+
+// Объяви следующие методы класса:
+
+// getValue() - возвращает текущее значение свойства value.
+// padEnd(str) - получает парметр str (строку) и добавляет её в конец значения свойства value объекта который вызывает этот метод.
+// padStart(str) - получает парметр str (строку) и добавляет её в начало значения свойства value объекта который вызывает этот метод.
+// padBoth(str) - получает парметр str (строку) и добавляет её в начало и в конец значения свойства value объекта который вызывает этот метод.
+// Под комментарием мы добавили инициализацию экземпляра и вызовы методов в той последовательности, в которой твой код будут проверять тесты. Пожалуйста ничего там не меняй.
+
+// class StringBuilder {
+// 	constructor(initialValue) {
+// 		this.value = initialValue;
+// 	}
+
+// 	getValue() {
+// 		return this.value;
+// 	}
+
+// 	padStart(value) {
+// 		// return (this.value = value.concat(this.value));
+// 		this.value = value + this.value;
+// 	}
+
+// 	padEnd(value) {
+// 		// return (this.value = this.value.concat(value));
+// 		this.value = this.value + value;
+// 	}
+
+// 	padBoth(value) {
+// 		// return (this.value = value.concat(this.value).concat(value));
+// 		this.value = value + this.value + value;
+// 	}
+// }
+
+// const builder = new StringBuilder(".");
+// console.log(builder.getValue()); // "."
+// builder.padStart("^");
+// console.log(builder.getValue()); // "^."
+// builder.padEnd("^");
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth("=");
+// console.log(builder.getValue()); // "=^.^="
+
+// ЗАДАЧА 12/20------------------------------------------------------------------------
+// // Выполни рефакторинг класса Car так, чтобы свойство brand было приватным и добавь два метода для публичного интерфейса, для чтения и изменения этого свойства.
+
+// // getBrand() - возвращает значение приватного свойства brand.
+// // changeBrand(newBrand) - изменяет значение приватного свойства brand на newBrand.
+
+// class Car {
+// 	#brand; // # - Обязательное объявление приватных свойств
+// 	constructor({ brand, model, price }) {
+// 		this.#brand = brand;
+// 		this.model = model;
+// 		this.price = price;
+// 	}
+
+// 	getBrand() {
+// 		return this.#brand;
+// 	}
+
+// 	changeBrand(newBrand) {
+// 		this.#brand = newBrand;
+// 	}
+// }
+// const audi = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+// const bmw = new Car({ brand: "bmw", model: "X5", price: 58900 });
+// const nissan = new Car({ brand: "Nissan", model: "Murano", price: 31700 });
+// audi.changeBrand("Honda");
+
+// console.log(audi);
+// console.log(bmw);
+// console.log(nissan);
+
+// ЗАДАЧА 13/20------------------------------------------------------------------------
