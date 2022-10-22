@@ -5618,3 +5618,47 @@
 // console.log(Car.checkPrice(57000));
 
 // ЗАДАЧА 18/20------------------------------------------------------------------------
+// // В приложении нужен администратор с возможностью добавлять почты пользователей в чёрный список.
+
+// // Объяви класс Admin, который наследует от класса User
+// // Добавь классу Admin публичное статическое свойство AccessLevel (уровень доступа), значение которого это объект { BASIC: "basic", SUPERUSER: "superuser" }
+// // class User {
+// // 	constructor(email) {
+// // 		this.email = email;
+// // 	}
+
+// // 	get email() {
+// // 		return this.email;
+// // 	}
+
+// // 	set email(newEmail) {
+// // 		this.email = newEmail;
+// // 	}
+// // }
+// // // Change code below this line
+
+// class User {
+// 	constructor(email) {
+// 		this.email = email;
+// 	}
+
+// 	get email() {
+// 		return this.email;
+// 	}
+
+// 	set email(newEmail) {
+// 		S;
+// 		this.email = newEmail;
+// 	}
+// }
+// class Admin extends User {
+// 	static AccessLevel = {
+// 		BASIC: "basic",
+// 		SUPERUSER: "superuser",
+// 	};
+// }
+
+// console.log(Admin.AccessLevel.BASIC);
+// console.log(Admin.AccessLevel.SUPERUSER);
+
+// ЗАДАЧА 19/20------------------------------------------------------------------------
